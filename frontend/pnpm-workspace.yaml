@@ -5,3 +5,12 @@ minimumReleaseAgeExclude:
 onlyBuiltDependencies:
   - esbuild
   - '@sentry/cli'
+overrides:
+  'svelte-eslint-parser>eslint-scope': ^9.1.0
+  'form-data': ^4.0.6
+  'brace-expansion': ^5.0.6
+  'postcss': ^8.5.10
+  'picomatch': ^4.0.4
+  'flatted': ^3.4.2
+  'cookie': ^0.7.0
+  '@opentelemetry/core': ^2.8.0
