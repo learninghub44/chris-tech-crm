@@ -1,7 +1,8 @@
 # Chris Tech CRM — Handoff Notes
 
-Written 2026-07-13. Read this fully before touching the repo — it has real
-GitHub history behind it, not a blank slate.
+Written 2026-07-13, updated 2026-07-13 (later same day — commits moved
+faster than the doc). Read this fully before touching the repo — it has
+real GitHub history behind it, not a blank slate.
 
 ## What this project is
 
@@ -57,15 +58,39 @@ Stack:
 
 ## Roadmap agreed with user (in priority order)
 
-1. **Harden config for production** — real `SECRET_KEY`, `DEBUG=False`,
-   real `ALLOWED_HOSTS`, locked-down CORS (currently
-   `CORS_ALLOW_ALL=True` in dev env), S3 for media, SES for email
-   properly configured. Not started.
-2. **Patch the 29 flagged vulnerabilities** — bump affected packages in
-   `backend/pyproject.toml` (uv) and `frontend/package.json` (pnpm).
-   Not started — need the actual Dependabot alert list first (requires
-   a GitHub token with `security_events` read scope, or check the
-   Security tab manually).
+**Status update (2026-07-13, same day): items 1–2 below have moved.
+Commits since this doc was first written:**
+```
+5fcbd7b Fix CORS wide-open bug in prod settings, add SSL redirect/proxy header handling
+28b27ee Patch Dependabot-flagged vulnerabilities (28 of 29)
+e6fc764 Fix hardcoded TIME_ZONE (Asia/Kolkata -> Africa/Nairobi)
+fcfec75 Patch last Dependabot vuln: weasyprint 68.1 -> 69.0 (CVE-2026-49452)
+```
+
+1. **Harden config for production** — **mostly done.** `SECRET_KEY`,
+   `DEBUG`, `ALLOWED_HOSTS`, and CORS (`CORS_ORIGIN_ALLOW_ALL`) are all
+   env-driven with safe defaults now (`backend/crm/settings.py`); the
+   wide-open CORS bug is fixed and SSL redirect/proxy header handling
+   was added. Still outstanding:
+   - **S3 media storage is not actually wired up.** `django-storages`
+     is a listed dependency but `settings.py` still only has local
+     `MEDIA_ROOT`/`MEDIA_URL` — no `DEFAULT_FILE_STORAGE`, no bucket
+     config. Uploaded files would hit local disk, which won't persist
+     across Railway deploys. Needs real work, not just an env var.
+   - SES email backend is wired and env-driven, but the default
+     `AWS_SES_REGION_NAME` is still `ap-south-1` (inherited from the
+     upstream template) — fine as long as the real env var is set at
+     deploy time, but worth changing the default given the Kenyan
+     market (SES has no Africa region; `eu-west-1` is the common
+     choice).
+   - Real `SECRET_KEY`/`ALLOWED_HOSTS` values still need to be set as
+     actual env vars at deploy time — the code just no longer forces
+     insecure defaults.
+2. **Patch the 29 flagged vulnerabilities** — **done.** All 29 patched
+   across two commits (`28b27ee` — 28 of 29, `fcfec75` — the last one,
+   a weasyprint bump to 69.0 for CVE-2026-49452). Worth a fresh check
+   of the Security tab to confirm zero open alerts remain, since new
+   ones can appear independently of this work.
 3. **Deploy backend + Postgres + Redis** — user's default host across
    his other projects is **Railway** (per his general stack pattern).
    Needs Procfile/railway config + provisioning Postgres/Redis services
