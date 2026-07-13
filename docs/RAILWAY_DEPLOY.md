@@ -91,7 +91,14 @@ AWS_SES_REGION_NAME=eu-west-1
 AWS_SES_REGION_ENDPOINT=email.eu-west-1.amazonaws.com
 DEFAULT_FROM_EMAIL=noreply@christech.co.ke
 ADMIN_EMAIL=<your real admin email>
+ADMIN_PASSWORD=<a real, strong password — required in prod as of this commit>
 ```
+(`create_default_admin` now refuses to create a superuser in
+`ENV_TYPE=prod` if `ADMIN_PASSWORD` is unset, instead of silently
+falling back to a default `admin` password. Previously an unset
+`ADMIN_PASSWORD` meant a real deploy could end up with an internet-
+facing superuser login of `admin`/`admin` — set this env var before
+first deploy.)
 (`eu-west-1` suggested since AWS SES has no Africa region — confirm
 this is where you want to verify a sender identity, or pick another
 supported SES region.)
