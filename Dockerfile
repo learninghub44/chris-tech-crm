@@ -27,6 +27,12 @@ RUN uv sync --frozen --no-install-project
 # Copy backend source
 COPY backend/ .
 
+# Copy production entrypoint (dev uses a volume-mounted script via
+# docker-compose; Railway builds a standalone image, so this needs to
+# be baked in)
+COPY docker/backend/entrypoint.prod.sh /app/entrypoint.prod.sh
+RUN chmod +x /app/entrypoint.prod.sh
+
 # Put the venv's binaries on PATH so `python`, `gunicorn`, `celery` etc. resolve.
 ENV PATH="/app/.venv/bin:$PATH"
 
