@@ -659,19 +659,19 @@ class TestPermissionClasses(MultiTenancyBaseTestCase):
         self.assertFalse(perm.has_permission(request, None))
 
     def test_is_super_admin_with_super_email(self):
-        """IsSuperAdmin allows micropyramid.com email."""
+        """IsSuperAdmin allows christech.co.ke email."""
         from common.permissions import IsSuperAdmin
 
         user = MagicMock()
         user.is_authenticated = True
-        user.email = "admin@micropyramid.com"
+        user.email = "admin@christech.co.ke"
         request = MagicMock()
         request.user = user
         perm = IsSuperAdmin()
         self.assertTrue(perm.has_permission(request, None))
 
     def test_is_super_admin_regular_email(self):
-        """IsSuperAdmin denies non-micropyramid emails."""
+        """IsSuperAdmin denies non-christech emails."""
         from common.permissions import IsSuperAdmin
 
         user = MagicMock()

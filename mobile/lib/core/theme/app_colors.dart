@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// BottleCRM Color System
+/// Chris Tech CRM Color System
 /// A professional, modern color palette optimized for CRM workflows
 /// Inspired by HubSpot mobile app design patterns
 class AppColors {
@@ -15,8 +15,8 @@ class AppColors {
   static const Color primary300 = Color(0xFF93C5FD);
   static const Color primary400 = Color(0xFF60A5FA);
   static const Color primary500 = Color(0xFF3B82F6);
-  static const Color primary600 = Color(0xFF2563EB); // Main action color
-  static const Color primary700 = Color(0xFF1D4ED8);
+  static const Color primary600 = Color(0xFF0A6CFF); // Main action color (Chris Tech brand blue)
+  static const Color primary700 = Color(0xFF0850C4);
   static const Color primary800 = Color(0xFF1E40AF);
   static const Color primary900 = Color(0xFF1E3A8A);
 

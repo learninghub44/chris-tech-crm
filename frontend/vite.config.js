@@ -7,8 +7,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
   return {
     plugins: [sentrySvelteKit({
-      org: "micropyramid-fa",
-      project: "bottlecrm-app",
+      org: "christech-crm",
+      project: "christech-crm-app",
       sourceMapsUploadOptions: {
         authToken: env.SENTRY_AUTH_TOKEN
       },

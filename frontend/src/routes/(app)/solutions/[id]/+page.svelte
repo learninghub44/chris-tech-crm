@@ -118,7 +118,7 @@
 </script>
 
 <svelte:head>
-  <title>{sol.title} - Knowledge Base - BottleCRM</title>
+  <title>{sol.title} - Knowledge Base - Chris Tech CRM</title>
 </svelte:head>
 
 <PageHeader

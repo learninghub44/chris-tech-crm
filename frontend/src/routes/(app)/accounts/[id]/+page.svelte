@@ -205,7 +205,7 @@
 </script>
 
 <svelte:head>
-  <title>{accountName} · BottleCRM</title>
+  <title>{accountName} · Chris Tech CRM</title>
 </svelte:head>
 
 <PageHeader

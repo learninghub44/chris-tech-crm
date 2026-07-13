@@ -63,7 +63,7 @@ class IsSuperAdmin(permissions.BasePermission):
     """
     Permission class for platform-level super admins.
 
-    Super admins are identified by @micropyramid.com email domain.
+    Super admins are identified by @christech.co.ke email domain.
     They have access to admin panel and can manage all organizations.
     """
 
@@ -74,4 +74,4 @@ class IsSuperAdmin(permissions.BasePermission):
             return False
 
         # Check for super admin email domain
-        return request.user.email.endswith("@micropyramid.com")
+        return request.user.email.endswith("@christech.co.ke")

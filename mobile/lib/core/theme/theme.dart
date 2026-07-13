@@ -1,4 +1,4 @@
-/// BottleCRM Theme System
+/// Chris Tech CRM Theme System
 /// Barrel export for all theme-related files
 library;
 

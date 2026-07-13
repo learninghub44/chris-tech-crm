@@ -22,12 +22,12 @@
 </script>
 
 <svelte:head>
-  <title>Support - BottleCRM</title>
+  <title>Support - Chris Tech CRM</title>
 </svelte:head>
 
 <PageHeader
   title="Help & Support"
-  subtitle="Join thousands of businesses using BottleCRM to manage customer relationships without the enterprise price tag."
+  subtitle="Join thousands of businesses using Chris Tech CRM to manage customer relationships without the enterprise price tag."
   size="display"
 />
 
@@ -41,7 +41,7 @@
       <div class="mission-content">
         <h2>Our Mission</h2>
         <p>
-          BottleCRM addresses the high subscription costs of commercial CRM alternatives by
+          Chris Tech CRM addresses the high subscription costs of commercial CRM alternatives by
           providing a
           <strong>completely free, open-source, and highly customizable</strong> solution. Clone it, self-host
           it, and make it yours — forever free.
@@ -77,7 +77,7 @@
         </div>
         <Button
           class="card-action"
-          onclick={() => window.open('https://github.com/MicroPyramid/Django-CRM', '_blank')}
+          onclick={() => window.open('https://christech.co.ke', '_blank')}
         >
           <Github class="h-4 w-4" />
           Visit GitHub
@@ -99,7 +99,7 @@
         <Button
           variant="outline"
           class="card-action-outline"
-          onclick={() => (window.location.href = 'mailto:ashwin@micropyramid.com')}
+          onclick={() => (window.location.href = 'mailto:support@christech.co.ke')}
         >
           <Mail class="h-4 w-4" />
           Contact Team
@@ -114,13 +114,13 @@
           </div>
         </div>
         <h3>Feature Requests</h3>
-        <p>Have an idea? Share your requests and help shape the future of BottleCRM.</p>
+        <p>Have an idea? Share your requests and help shape the future of Chris Tech CRM.</p>
         <Button
           variant="outline"
           class="card-action-outline"
           onclick={() =>
             window.open(
-              'https://github.com/MicroPyramid/Django-CRM/issues/new?template=feature_request.md',
+              'https://christech.co.ke/support/feature-request',
               '_blank'
             )}
         >
@@ -144,7 +144,7 @@
           class="card-action-outline"
           onclick={() =>
             window.open(
-              'https://github.com/MicroPyramid/Django-CRM/issues/new?template=bug_report.md',
+              'https://christech.co.ke/support/bug-report',
               '_blank'
             )}
         >
@@ -173,7 +173,7 @@
           class="card-action-security"
           onclick={() =>
             (window.location.href =
-              'mailto:ashwin@micropyramid.com?subject=Security%20Issue%20-%20BottleCRM')}
+              'mailto:support@christech.co.ke?subject=Security%20Issue%20-%20Chris Tech CRM')}
         >
           <Shield class="h-4 w-4" />
           Report Privately
@@ -199,7 +199,7 @@
           class="banner-cta"
           onclick={() =>
             (window.location.href =
-              'mailto:ashwin@micropyramid.com?subject=Custom%20CRM%20Development%20Inquiry')}
+              'mailto:support@christech.co.ke?subject=Custom%20CRM%20Development%20Inquiry')}
         >
           <MessageSquareHeart class="h-4 w-4" />
           Get Custom Quote
@@ -211,7 +211,7 @@
 
     <!-- Version -->
     <footer class="version-footer">
-      <span>BottleCRM</span>
+      <span>Chris Tech CRM</span>
       <span class="version-divider">•</span>
       <span>v1.0.0</span>
     </footer>

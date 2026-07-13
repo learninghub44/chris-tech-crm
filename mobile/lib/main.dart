@@ -52,7 +52,7 @@ void main() async {
         DeviceOrientation.portraitDown,
       ]);
 
-      runApp(const ProviderScope(child: BottleCRMApp()));
+      runApp(const ProviderScope(child: Chris Tech CRMApp()));
     },
     (error, stack) {
       // Catch-all for anything that escaped the zone — e.g. errors from
@@ -64,16 +64,16 @@ void main() async {
   );
 }
 
-/// BottleCRM - Main Application Widget
-class BottleCRMApp extends ConsumerWidget {
-  const BottleCRMApp({super.key});
+/// Chris Tech CRM - Main Application Widget
+class Chris Tech CRMApp extends ConsumerWidget {
+  const Chris Tech CRMApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(appRouterProvider);
 
     return MaterialApp.router(
-      title: 'BottleCRM',
+      title: 'Chris Tech CRM',
       debugShowCheckedModeBanner: false,
 
       // Theme

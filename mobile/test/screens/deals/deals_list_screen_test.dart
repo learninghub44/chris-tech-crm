@@ -1,9 +1,9 @@
-import 'package:bottle_crm/core/theme/theme.dart';
-import 'package:bottle_crm/data/models/auth_response.dart';
-import 'package:bottle_crm/data/models/models.dart';
-import 'package:bottle_crm/providers/auth_provider.dart';
-import 'package:bottle_crm/providers/deals_provider.dart';
-import 'package:bottle_crm/screens/deals/deals_list_screen.dart';
+import 'package:chris_tech_crm/core/theme/theme.dart';
+import 'package:chris_tech_crm/data/models/auth_response.dart';
+import 'package:chris_tech_crm/data/models/models.dart';
+import 'package:chris_tech_crm/providers/auth_provider.dart';
+import 'package:chris_tech_crm/providers/deals_provider.dart';
+import 'package:chris_tech_crm/screens/deals/deals_list_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -82,7 +82,7 @@ enum TaskStatus {
   }
 }
 
-/// Task model for BottleCRM
+/// Task model for Chris Tech CRM
 class Task {
   final String id;
   final String title;

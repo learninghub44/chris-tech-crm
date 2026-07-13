@@ -178,7 +178,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
         ),
         const SizedBox(height: 10),
         Text(
-          'Sign in to BottleCRM.',
+          'Sign in to Chris Tech CRM.',
           textAlign: TextAlign.center,
           style: AppTypography.body.copyWith(
             color: AppColors.textSecondary,
@@ -303,14 +303,14 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
             text: 'Terms',
             style: linkStyle,
             recognizer: _recognizerFor(
-              'https://bottlecrm.io/terms-of-service',
+              'https://christech.co.ke/terms-of-service',
             ),
           ),
           const TextSpan(text: ' and '),
           TextSpan(
             text: 'Privacy Policy',
             style: linkStyle,
-            recognizer: _recognizerFor('https://bottlecrm.io/privacy-policy'),
+            recognizer: _recognizerFor('https://christech.co.ke/privacy-policy'),
           ),
         ],
       ),

@@ -357,7 +357,7 @@
 </script>
 
 <svelte:head>
-  <title>Sales Goals - BottleCRM</title>
+  <title>Sales Goals - Chris Tech CRM</title>
 </svelte:head>
 
 <PageHeader

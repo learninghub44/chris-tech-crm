@@ -1,4 +1,4 @@
-/// User model for BottleCRM
+/// User model for Chris Tech CRM
 class User {
   final String id;
   final String name;

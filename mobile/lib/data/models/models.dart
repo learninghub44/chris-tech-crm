@@ -1,4 +1,4 @@
-/// BottleCRM Data Models
+/// Chris Tech CRM Data Models
 /// Barrel export for all model files
 library;
 

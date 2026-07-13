@@ -230,7 +230,7 @@
 </script>
 
 <svelte:head>
-  <title>New Invoice | BottleCRM</title>
+  <title>New Invoice | Chris Tech CRM</title>
 </svelte:head>
 
 <!-- Hidden Form -->

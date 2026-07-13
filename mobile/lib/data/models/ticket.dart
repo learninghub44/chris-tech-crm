@@ -75,7 +75,7 @@ enum TicketType {
   }
 }
 
-/// Ticket model for BottleCRM
+/// Ticket model for Chris Tech CRM
 class Ticket {
   final String id;
   final String name;

@@ -35,10 +35,10 @@
 </script>
 
 <svelte:head>
-  <title>Sign in | BottleCRM</title>
+  <title>Sign in | Chris Tech CRM</title>
   <meta
     name="description"
-    content="Sign in or sign up for BottleCRM to manage your contacts, deals, and grow your business."
+    content="Sign in or sign up for Chris Tech CRM to manage your contacts, deals, and grow your business."
   />
 </svelte:head>
 
@@ -48,7 +48,7 @@
     <!-- Logo -->
     <a href="/" class="logo">
       <img src={imgLogo} alt="" class="logo-icon" />
-      <span class="logo-text">BottleCRM</span>
+      <span class="logo-text">Chris Tech CRM</span>
     </a>
 
     <!-- Login Card -->
@@ -116,11 +116,11 @@
 
     <!-- Footer -->
     <footer class="login-footer">
-      <a href="https://bottlecrm.io/privacy-policy">Privacy Policy</a>
+      <a href="https://christech.co.ke/privacy-policy">Privacy Policy</a>
       <span class="dot"></span>
-      <a href="https://bottlecrm.io/terms">Terms of Service</a>
+      <a href="https://christech.co.ke/terms">Terms of Service</a>
       <span class="dot"></span>
-      <a href="https://github.com/MicroPyramid/Django-CRM" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://christech.co.ke" target="_blank" rel="noopener">GitHub</a>
     </footer>
   </div>
 </div>

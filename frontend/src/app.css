@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   BOTTLECRM DESIGN SYSTEM - Orange Primary
-   A modern CRM design system with warm orange accents and professional styling
+   CHRIS TECH CRM DESIGN SYSTEM - Blue Primary
+   A modern CRM design system with confident blue accents, matching the Chris Tech brand
    Based on DESIGN_SYSTEM.md v1.2
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -17,12 +17,12 @@
   /* ─────────────────────────────────────────────────────────────────────────
      BRAND COLORS
      ───────────────────────────────────────────────────────────────────────── */
-  --color-brand-primary: #ea580c;
-  --color-brand-dark: #404346;
+  --color-brand-primary: #0A6CFF;
+  --color-brand-dark: #14161D;
   --color-brand-white: #ffffff;
 
   /* ─────────────────────────────────────────────────────────────────────────
-     LIGHT MODE - Clean, professional with warm orange accents
+     LIGHT MODE - Clean, professional with Chris Tech blue accents
      ───────────────────────────────────────────────────────────────────────── */
 
   /* Core surfaces */
@@ -33,8 +33,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 260);
 
-  /* Primary - Orange */
-  --primary: oklch(0.58 0.2 30);
+  /* Primary - Blue */
+  --primary: oklch(0.52 0.19 260);
   --primary-foreground: oklch(0.98 0 0);
 
   /* Secondary */
@@ -45,7 +45,7 @@
   --muted: oklch(0.96 0.005 60);
   --muted-foreground: oklch(0.45 0.02 260);
 
-  /* Accent - Light orange tint */
+  /* Accent - Light blue tint */
   --accent: oklch(0.98 0.02 60);
   --accent-foreground: oklch(0.25 0.05 30);
 
@@ -55,24 +55,24 @@
   /* Borders & inputs */
   --border: oklch(0.91 0.005 60);
   --input: oklch(0.91 0.005 60);
-  --ring: oklch(0.58 0.2 30);
+  --ring: oklch(0.52 0.19 260);
 
-  /* Chart colors - Sequential (Orange-based) */
-  --chart-1: #ea580c;
-  --chart-2: #f97316;
-  --chart-3: #fb923c;
-  --chart-4: #fdba74;
-  --chart-5: #fed7aa;
+  /* Chart colors - Sequential (Blue-based) */
+  --chart-1: #0A6CFF;
+  --chart-2: #3B8AFF;
+  --chart-3: #6BA5FF;
+  --chart-4: #A8CBFF;
+  --chart-5: #D6E7FF;
 
   /* Sidebar */
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: #111827;
-  --sidebar-primary: #ea580c;
+  --sidebar-primary: #0A6CFF;
   --sidebar-primary-foreground: oklch(0.995 0 0);
   --sidebar-accent: oklch(0.96 0 0);
   --sidebar-accent-foreground: #111827;
   --sidebar-border: oklch(0.94 0 0);
-  --sidebar-ring: #ea580c;
+  --sidebar-ring: #0A6CFF;
   --sidebar-active-fill: oklch(0.94 0 0);
   --sidebar-muted: #4b5563;
   --sidebar-subtle: #9ca3af;
@@ -80,11 +80,11 @@
   /* ─────────────────────────────────────────────────────────────────────────
      PRIMARY COLOR SCALE
      ───────────────────────────────────────────────────────────────────────── */
-  --color-primary-default: #ea580c;
-  --color-primary-hover: #c2410c;
-  --color-primary-dark: #c2410c;
-  --color-primary-active: #9a3412;
-  --color-primary-light: #fff7ed;
+  --color-primary-default: #0A6CFF;
+  --color-primary-hover: #0850C4;
+  --color-primary-dark: #0850C4;
+  --color-primary-active: #053884;
+  --color-primary-light: #EAF2FF;
 
   /* ─────────────────────────────────────────────────────────────────────────
      SEMANTIC COLORS
@@ -139,7 +139,7 @@
   --text-tertiary: #9ca3af;
   --text-disabled: #bdbdbd;
   --text-inverse: #ffffff;
-  --text-link: #ea580c;
+  --text-link: #0A6CFF;
   --text-error: #dc3545;
 
   /* ─────────────────────────────────────────────────────────────────────────
@@ -148,14 +148,14 @@
   --border-default: #e0e0e0;
   --border-subtle: #eeeeee;
   --border-strong: #bdbdbd;
-  --border-focus: #ea580c;
+  --border-focus: #0A6CFF;
   --border-error: #dc3545;
 
   /* ─────────────────────────────────────────────────────────────────────────
      PIPELINE STAGE COLORS
      ───────────────────────────────────────────────────────────────────────── */
-  --stage-new: #ea580c;
-  --stage-contacted: #f97316;
+  --stage-new: #0A6CFF;
+  --stage-contacted: #3B8AFF;
   --stage-qualified: #3b82f6;
   --stage-proposal: #8b5cf6;
   --stage-negotiation: #f59e0b;
@@ -163,7 +163,7 @@
   --stage-lost: #ef4444;
 
   /* Pipeline Stage Backgrounds */
-  --stage-new-bg: #fff7ed;
+  --stage-new-bg: #EAF2FF;
   --stage-contacted-bg: #ffedd5;
   --stage-qualified-bg: #eff6ff;
   --stage-proposal-bg: #f5f3ff;
@@ -198,7 +198,7 @@
      ───────────────────────────────────────────────────────────────────────── */
   --priority-urgent: #dc2626;
   --priority-urgent-bg: #fee2e2;
-  --priority-high: #f97316;
+  --priority-high: #3B8AFF;
   --priority-high-bg: #ffedd5;
   --priority-medium: #fbbf24;
   --priority-medium-bg: #fef3c7;
@@ -232,7 +232,7 @@
   /* ─────────────────────────────────────────────────────────────────────────
      CHARTS - CATEGORICAL
      ───────────────────────────────────────────────────────────────────────── */
-  --cat-1: #ea580c;
+  --cat-1: #0A6CFF;
   --cat-2: #3b82f6;
   --cat-3: #22c55e;
   --cat-4: #8b5cf6;
@@ -242,7 +242,7 @@
   /* ─────────────────────────────────────────────────────────────────────────
      PROGRESS BAR
      ───────────────────────────────────────────────────────────────────────── */
-  --progress-default: #ea580c;
+  --progress-default: #0A6CFF;
   --progress-success: #22c55e;
   --progress-warning: #f59e0b;
   --progress-danger: #ef4444;
@@ -398,9 +398,9 @@
   --bg-subtle: #f5f5f5;
   --bg-muted: #eeeeee;
   --bg-emphasis: #e0e0e0;
-  --accent-primary: #ea580c;
-  --accent-primary-hover: #c2410c;
-  --accent-primary-subtle: #fff7ed;
+  --accent-primary: #0A6CFF;
+  --accent-primary-hover: #0850C4;
+  --accent-primary-subtle: #EAF2FF;
   --accent-secondary: #f59e0b;
   --accent-secondary-hover: #d97706;
   --accent-secondary-subtle: #fffbeb;
@@ -453,7 +453,7 @@
   --amber-soft-text: #92400e;
   --red: #dc2626;
   --red-soft: rgba(220, 38, 38, 0.08);
-  --orange: #ea580c;
+  --orange: #0A6CFF;
 
   /* CTA */
   --cta-bg: #111111;
@@ -509,33 +509,33 @@
   /* Borders & inputs */
   --border: oklch(0.28 0.01 30);
   --input: oklch(0.24 0.01 30);
-  --ring: oklch(0.7 0.16 35);
+  --ring: oklch(0.62 0.17 260);
 
   /* Chart colors - Vibrant */
-  --chart-1: #fb923c;
-  --chart-2: #fdba74;
-  --chart-3: #fed7aa;
+  --chart-1: #6BA5FF;
+  --chart-2: #A8CBFF;
+  --chart-3: #D6E7FF;
   --chart-4: #ffedd5;
-  --chart-5: #fff7ed;
+  --chart-5: #EAF2FF;
 
   /* Sidebar */
   --sidebar: oklch(0.14 0 0);
   --sidebar-foreground: rgba(255, 255, 255, 0.95);
-  --sidebar-primary: #fb923c;
+  --sidebar-primary: #6BA5FF;
   --sidebar-primary-foreground: oklch(0.12 0.01 30);
   --sidebar-accent: rgba(255, 255, 255, 0.06);
   --sidebar-accent-foreground: rgba(255, 255, 255, 0.95);
   --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #fb923c;
+  --sidebar-ring: #6BA5FF;
   --sidebar-active-fill: rgba(255, 255, 255, 0.10);
   --sidebar-muted: #9ca3af;
   --sidebar-subtle: #6b7280;
 
   /* Primary color scale - Dark mode */
-  --color-primary-default: #fb923c;
-  --color-primary-hover: #fdba74;
-  --color-primary-dark: #f97316;
-  --color-primary-active: #f97316;
+  --color-primary-default: #6BA5FF;
+  --color-primary-hover: #A8CBFF;
+  --color-primary-dark: #3B8AFF;
+  --color-primary-active: #3B8AFF;
   --color-primary-light: #431407;
 
   /* Surface Colors - Dark mode */
@@ -550,14 +550,14 @@
   --text-tertiary: #6b7280;
   --text-disabled: #525252;
   --text-inverse: #212121;
-  --text-link: #fb923c;
+  --text-link: #6BA5FF;
   --text-error: #f87171;
 
   /* Border Colors - Dark mode */
   --border-default: #3d3d3d;
   --border-subtle: #2a2a2a;
   --border-strong: #525252;
-  --border-focus: #fb923c;
+  --border-focus: #6BA5FF;
   --border-error: #f87171;
 
   /* Background Layers - Dark */
@@ -567,8 +567,8 @@
   --bg-emphasis: #1f222b;
 
   /* Accent Colors - Orange glow */
-  --accent-primary: #fb923c;
-  --accent-primary-hover: #fdba74;
+  --accent-primary: #6BA5FF;
+  --accent-primary-hover: #A8CBFF;
   --accent-primary-subtle: rgba(251, 146, 60, 0.1);
   --accent-secondary: #fbbf24;
   --accent-secondary-hover: #f59e0b;
@@ -673,7 +673,7 @@
   --amber-soft-text: #fcd34d;
   --red: #f87171;
   --red-soft: rgba(248, 113, 113, 0.10);
-  --orange: #ea580c;
+  --orange: #0A6CFF;
 
   /* CTA (inverted) */
   --cta-bg: #ffffff;

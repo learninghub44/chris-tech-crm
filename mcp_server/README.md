@@ -1,7 +1,7 @@
-# BottleCRM MCP Server (`bcrm-mcp`)
+# Chris Tech CRM MCP Server (`bcrm-mcp`)
 
 `bcrm-mcp` is a standalone [Model Context Protocol](https://modelcontextprotocol.io)
-server that lets an AI agent (Claude Desktop, Cursor, etc.) drive a BottleCRM
+server that lets an AI agent (Claude Desktop, Cursor, etc.) drive a Chris Tech CRM
 instance through its REST API.
 
 It is a **thin HTTP client** of the CRM API — it does *not* import Django, has no
@@ -30,8 +30,8 @@ isolation and adds no privileges of its own.
 
 - Python 3.11+
 - [`uv`](https://docs.astral.sh/uv/)
-- A reachable BottleCRM backend (the community Django-CRM API)
-- A BottleCRM Personal Access Token (`bcrm_pat_…`)
+- A reachable Chris Tech CRM backend (the community Django-CRM API)
+- A Chris Tech CRM Personal Access Token (`bcrm_pat_…`)
 
 ## Install & run
 
@@ -112,9 +112,9 @@ token in a header — nothing to install:
 ```json
 {
   "mcpServers": {
-    "bottlecrm": {
+    "christechcrm": {
       "type": "http",
-      "url": "https://api.bottlecrm.io/mcp",
+      "url": "https://api.christech.co.ke/mcp",
       "headers": { "Authorization": "Bearer bcrm_pat_…" }
     }
   }
@@ -152,7 +152,7 @@ Register `bcrm-mcp` in your AI client and pass `BCRM_BASE_URL` + `BCRM_TOKEN` as
 environment variables. **Claude Desktop, Cursor, and Gemini CLI share the
 identical `mcpServers` JSON schema** — only the config file differs. **Codex CLI
 uses TOML.** Replace `http://localhost:8000` with your API host (e.g.
-`https://api.bottlecrm.io`) and paste your `bcrm_pat_…` token.
+`https://api.christech.co.ke`) and paste your `bcrm_pat_…` token.
 
 | Client         | Config file                                                            | Format |
 | -------------- | ---------------------------------------------------------------------- | ------ |
@@ -166,7 +166,7 @@ uses TOML.** Replace `http://localhost:8000` with your API host (e.g.
 ```json
 {
   "mcpServers": {
-    "bottlecrm": {
+    "christechcrm": {
       "command": "uvx",
       "args": ["bcrm-mcp"],
       "env": {
@@ -181,11 +181,11 @@ uses TOML.** Replace `http://localhost:8000` with your API host (e.g.
 ### Codex CLI (TOML)
 
 ```toml
-[mcp_servers.bottlecrm]
+[mcp_servers.christechcrm]
 command = "uvx"
 args = ["bcrm-mcp"]
 
-[mcp_servers.bottlecrm.env]
+[mcp_servers.christechcrm.env]
 BCRM_BASE_URL = "http://localhost:8000"
 BCRM_TOKEN = "bcrm_pat_…"
 ```
@@ -202,7 +202,7 @@ the client's working directory. For the JSON clients:
 ```json
 {
   "mcpServers": {
-    "bottlecrm": {
+    "christechcrm": {
       "command": "uv",
       "args": ["run", "--directory", "/abs/path/to/mcp_server", "bcrm-mcp"],
       "env": {

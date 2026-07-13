@@ -58,7 +58,7 @@
 </script>
 
 <svelte:head>
-  <title>{opp?.name || 'Opportunity'} · BottleCRM</title>
+  <title>{opp?.name || 'Opportunity'} · Chris Tech CRM</title>
 </svelte:head>
 
 <PageHeader

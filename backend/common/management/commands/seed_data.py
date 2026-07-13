@@ -680,14 +680,14 @@ class Command(BaseCommand):
             )
 
     def create_org(self, currency, country, index=0):
-        """Get or create an organization. The first org is always 'MicroPyramid' so
+        """Get or create an organization. The first org is always 'Chris Tech' so
         local-dev workflows have a known name to log into via `manage.py devlogin`.
 
         Uses get_or_create on name so repeated seed runs reuse the same org rather
         than piling up duplicates — duplicate names break `devlogin --org NAME`
         because it can't disambiguate.
         """
-        name = "MicroPyramid" if index == 0 else self._demo_company()
+        name = "Chris Tech" if index == 0 else self._demo_company()
         org, created = Org.objects.get_or_create(
             name=name,
             defaults={

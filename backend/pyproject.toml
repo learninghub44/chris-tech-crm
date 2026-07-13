@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [
-    { name = "MicroPyramid", email = "hello@micropyramid.com" },
+    { name = "Chris Tech", email = "hello@christech.co.ke" },
 ]
 keywords = [
     "django",
@@ -79,11 +79,11 @@ mcp = ["bcrm-mcp"]
 bcrm-mcp = { path = "../mcp_server", editable = true }
 
 [project.urls]
-Homepage = "https://github.com/MicroPyramid/Django-CRM"
-Repository = "https://github.com/MicroPyramid/Django-CRM"
-Documentation = "https://github.com/MicroPyramid/Django-CRM#readme"
-Issues = "https://github.com/MicroPyramid/Django-CRM/issues"
-Changelog = "https://github.com/MicroPyramid/Django-CRM/releases"
+Homepage = "https://github.com/learninghub44/chris-tech-crm"
+Repository = "https://github.com/learninghub44/chris-tech-crm"
+Documentation = "https://github.com/learninghub44/chris-tech-crm#readme"
+Issues = "https://github.com/learninghub44/chris-tech-crm/issues"
+Changelog = "https://github.com/learninghub44/chris-tech-crm/releases"
 
 [dependency-groups]
 dev = [

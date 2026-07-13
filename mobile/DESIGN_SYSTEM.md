@@ -1,6 +1,6 @@
-# BottleCRM Mobile Design System
+# Chris Tech CRM Mobile Design System
 
-A comprehensive design guide for the BottleCRM mobile app, inspired by modern CRM apps like HubSpot.
+A comprehensive design guide for the Chris Tech CRM mobile app, inspired by modern CRM apps like HubSpot.
 
 ---
 

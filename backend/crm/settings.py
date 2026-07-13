@@ -239,7 +239,7 @@ LOGGING = {
     },
 }
 
-APPLICATION_NAME = "bottlecrm"
+APPLICATION_NAME = "christechcrm"
 
 SETTINGS_EXPORT = ["APPLICATION_NAME"]
 
@@ -259,7 +259,7 @@ REST_FRAMEWORK = {
 
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "BottleCRM API",
+    "TITLE": "Chris Tech CRM API",
     "DESCRIPTION": "Open source CRM application",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
