@@ -71,18 +71,29 @@ fcfec75 Patch last Dependabot vuln: weasyprint 68.1 -> 69.0 (CVE-2026-49452)
    `DEBUG`, `ALLOWED_HOSTS`, and CORS (`CORS_ORIGIN_ALLOW_ALL`) are all
    env-driven with safe defaults now (`backend/crm/settings.py`); the
    wide-open CORS bug is fixed and SSL redirect/proxy header handling
-   was added. Still outstanding:
-   - **S3 media storage is not actually wired up.** `django-storages`
-     is a listed dependency but `settings.py` still only has local
-     `MEDIA_ROOT`/`MEDIA_URL` — no `DEFAULT_FILE_STORAGE`, no bucket
-     config. Uploaded files would hit local disk, which won't persist
-     across Railway deploys. Needs real work, not just an env var.
+   was added. Correction to an earlier version of this doc: **S3 media
+   storage IS already wired up** — it lives in
+   `backend/crm/server_settings.py` (loaded only when `ENV_TYPE=prod`,
+   via `settings.py`'s `from .server_settings import *`), predates the
+   rebrand (carried over from the upstream BottleCRM project), and sets
+   `DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"`
+   plus bucket/region/gzip config from required env vars
+   (`AWS_BUCKET_NAME`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`).
+   Easy to miss because `settings.py` alone (without `server_settings.py`)
+   looks local-disk-only — check both files together. Still outstanding:
    - SES email backend is wired and env-driven, but the default
      `AWS_SES_REGION_NAME` is still `ap-south-1` (inherited from the
      upstream template) — fine as long as the real env var is set at
      deploy time, but worth changing the default given the Kenyan
      market (SES has no Africa region; `eu-west-1` is the common
      choice).
+   - `server_settings.py` requires `SENTRY_DSN`, `AWS_BUCKET_NAME`,
+     `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SES_REGION_NAME`,
+     and `AWS_SES_REGION_ENDPOINT` via `os.environ[...]` (no default) —
+     so `ENV_TYPE=prod` will hard-crash on boot if any are unset. That's
+     correct/safe behavior, but means all of these must be provisioned
+     (real S3 bucket, SES sender identity verified, Sentry project
+     created) before a prod deploy will even start.
    - Real `SECRET_KEY`/`ALLOWED_HOSTS` values still need to be set as
      actual env vars at deploy time — the code just no longer forces
      insecure defaults.
