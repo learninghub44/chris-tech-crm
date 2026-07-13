@@ -24,7 +24,11 @@ MEDIA_URL = f"//{S3_DOMAIN}/{DEFAULT_S3_PATH}/"
 # STATIC_URL = "https://%s/" % (S3_DOMAIN)
 # ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
 
-CORS_ORIGIN_ALLOW_ALL = True
+# Security: do NOT force CORS wide-open in prod. This used to hardcode
+# `CORS_ORIGIN_ALLOW_ALL = True` here, which silently overran the
+# env-driven CORS_ALLOW_ALL/CORS_ALLOWED_ORIGINS lockdown set in
+# settings.py (server_settings.py is imported after, via `import *`).
+# Leave CORS behavior to the env vars already wired in settings.py.
 
 AWS_IS_GZIPPED = True
 AWS_ENABLED = True
@@ -32,9 +36,17 @@ AWS_S3_SECURE_URLS = True
 
 EMAIL_BACKEND = "django_ses.SESBackend"
 
-SESSION_COOKIE_DOMAIN = ".christech.co.ke"
+SESSION_COOKIE_DOMAIN = os.environ.get("SESSION_COOKIE_DOMAIN", ".christech.co.ke")
 SESSION_COOKIE_SECURE = True  # Only send session cookie over HTTPS
 CSRF_COOKIE_SECURE = True  # Only send CSRF cookie over HTTPS
+
+# Security: Railway/Cloudflare terminate TLS in front of the app and
+# forward plain HTTP internally, so Django needs to trust the proxy
+# header to know the original request was HTTPS. Without this,
+# SECURE_SSL_REDIRECT (or any "is this request secure" check) loops
+# or misbehaves behind those proxies.
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_SSL_REDIRECT = os.environ.get("SECURE_SSL_REDIRECT", "True").lower() == "true"
 
 sentry_sdk.init(
     dsn=os.environ["SENTRY_DSN"],
