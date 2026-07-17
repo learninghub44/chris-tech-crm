@@ -1,5 +1,13 @@
 # Deploying to Railway
 
+> **⚠️ NOT the actual deploy path for this repo.** This doc and
+> `railway.json` were written on the assumption Chris would use
+> Railway (a pattern from his other projects), but confirmed
+> 2026-07-17: the real deploy is **backend on Render, frontend on
+> Cloudflare**. Kept here for reference only — don't follow this as
+> current instructions. See `HANDOFF.md` roadmap items 3–4 for the
+> actual status.
+
 This repo can't reach railway.app from the sandbox this was written in,
 so this doc is the handoff: everything below has to be run from your
 own machine, the Railway CLI, or the Railway dashboard.

@@ -102,18 +102,22 @@ fcfec75 Patch last Dependabot vuln: weasyprint 68.1 -> 69.0 (CVE-2026-49452)
    a weasyprint bump to 69.0 for CVE-2026-49452). Worth a fresh check
    of the Security tab to confirm zero open alerts remain, since new
    ones can appear independently of this work.
-3. **Deploy backend + Postgres + Redis** — user's default host across
-   his other projects is **Railway** (per his general stack pattern).
-   Needs Procfile/railway config + provisioning Postgres/Redis services
-   on Railway. Not started. **Note: this sandbox's network allowlist
-   does NOT include railway.app**, so any Railway CLI/API calls must be
-   run from the user's own machine or the Railway dashboard — an agent
-   in a similarly locked-down sandbox will hit the same wall.
-4. **Deploy the SvelteKit frontend** — likely Cloudflare Pages (his
-   usual choice per other projects) or alongside backend on Railway.
-   Not started.
-5. **Point christech.co.ke at it** — DNS + HTTPS + update
-   `ALLOWED_HOSTS`/CORS for the real domain. Not started.
+3. **Deploy backend + Postgres + Redis** — **done, confirmed by Chris
+   2026-07-17.** Backend is live on **Render**, not Railway — the
+   Railway assumption in earlier versions of this doc was wrong,
+   carried over from a pattern in his other repos that doesn't apply
+   here. `railway.json` and `docs/RAILWAY_DEPLOY.md` are stale/unused;
+   kept in the repo for reference only, not the actual deploy path.
+   No Render-specific config (render.yaml, env var list actually set
+   on the live service) has been captured in this repo yet — worth
+   adding if anyone needs to reproduce or modify the Render setup.
+4. **Deploy the SvelteKit frontend** — **done, confirmed by Chris
+   2026-07-17.** Frontend is live on **Cloudflare** (Pages, presumably
+   — not explicitly confirmed which Cloudflare product). No
+   Cloudflare-specific build config has been captured in this repo.
+5. **Point christech.co.ke at it** — status not confirmed. Domain/DNS
+   may or may not be pointed at the live Render/Cloudflare deploys yet
+   — don't assume either way, ask.
 6. **Build & ship the mobile Flutter app** — point API base URL at
    prod backend, build signed Android AAB and iOS build. Needs the
    user's Apple Developer and Google Play Console accounts. Not
@@ -128,9 +132,9 @@ fcfec75 Patch last Dependabot vuln: weasyprint 68.1 -> 69.0 (CVE-2026-49452)
 - Payment rail for billing: Stripe, M-Pesa (Daraja API), or both?
 - Where is DNS for christech.co.ke managed (Cloudflare presumably,
   given his other projects use Cloudflare Pages)?
-- Does he want Railway for backend specifically, or is that just an
-  assumption carried over from his other repos (worth confirming, not
-  yet confirmed for THIS project)?
+- ~~Does he want Railway for backend specifically~~ — answered
+  2026-07-17: no, backend is on **Render**, frontend on **Cloudflare**.
+  Railway was never actually used for this repo.
 - Multi-tenant pricing model — per-seat, per-org flat fee, usage-based?
 - Any existing customers/leads waiting on this, or still pre-launch?
 
@@ -140,8 +144,12 @@ fcfec75 Patch last Dependabot vuln: weasyprint 68.1 -> 69.0 (CVE-2026-49452)
   used in this session was pasted directly in chat by the user — it
   should be rotated/replaced, don't reuse an old one from a
   transcript).
-- Railway account access (CLI token or dashboard access) — user-side,
-  not available in a sandboxed agent environment.
+- Render account access (dashboard) if reproducing/modifying the live
+  backend config from here — not available in a sandboxed agent
+  environment. (Railway is NOT used for this repo — see roadmap
+  item 3.)
+- Cloudflare account access if reproducing/modifying the live frontend
+  config from here.
 - AWS credentials for SES + S3 if wiring up production email/media.
 - Apple Developer + Google Play accounts for mobile app store
   submission, when that stage is reached.
